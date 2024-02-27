@@ -6,13 +6,11 @@ import Form from './Form';
 const TableHeader = (fetchData, handleSubmit) => {
   
   return (
-    <>
-    
+    <>    
     <div>
-    <Form onSubmit={handleSubmit}/>Assingment</div>
-
+    <Form onSubmit={handleSubmit}/>
+    Assingment</div>
     </>
-
   );
 };
 

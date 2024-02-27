@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {RotatingLines} from "react-loader-spinner"
@@ -55,16 +54,13 @@ const App = () => {
         <button style={{ float: "right"}} onClick={fetchData}>Sync Sheet</button>
         <button style={{ float: "right", marginRight:'20px'}} onClick={() => setIsNewDataFormOpen(true)}>Add New</button>
       </div>
-      {/* <Form onSubmit={handleSubmit}/> */}
+ 
     </div>
       {isLoading && <div style={{height:'100%', width:'100%', textAlign: 'center', display: 'block', zIndex:100}}><RotatingLines height={'25%'} width={'25%'}></RotatingLines></div>}
       <div style={{display: 'block'}}>
         {isNewDataFormOpen && <Form onSubmit={handleSubmit} onCancel={() => setIsNewDataFormOpen(false)}/>}
         {!isNewDataFormOpen && !isLoading && <Table columns={dataSource.columns} data={dataSource.data} fetchData = {fetchData} handleSubmit = {handleSubmit} />}
       </div>
-      
-      
-      
       </>
   );
 };

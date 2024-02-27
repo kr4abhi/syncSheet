@@ -1,19 +1,20 @@
 const express = require("express");
 const {google} = require("googleapis");
 const dotenv = require("dotenv");
-// const cors = require("cors");
 
 dotenv.config();
 const app = express();
-PORT = process.env.PORT || 6000;
+
+const PORT = process.env.PORT || 6000;
+const keyFile = process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS;
+const scopes = process.env.GOOGLE_SHEETS_SCOPES;
 
 app.use(express.json());
-// app.use(cors());
 
 // Create authentication client
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'credentials.json',
-  scopes: 'https://www.googleapis.com/auth/spreadsheets',
+  keyFile: keyFile,
+  scopes: scopes,
 });
 
 // Get client instance for auth
